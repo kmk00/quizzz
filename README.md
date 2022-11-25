@@ -1,1 +1,1 @@
-# wordle-clone
+# quizz
