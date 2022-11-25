@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #f5f7fb;
+  --primary: #293264;
+  --btn-color: #4d5b9e;
+  --secondary: #d6dbf5;
+  --correct: #94d7a2;
+  --wrong: #f8bcbc;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Karla", sans-serif;
+}
+
+button {
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+main {
+  max-width: 1000px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answer-container {
+  display: flex;
+  gap: 25px;
+}
+
+.answer-btn {
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
+
+.answer-btn:hover {
+  background-color: var(--secondary);
+}
+
+#main-btn {
+  width: fit-content;
+}
