@@ -1,21 +1,27 @@
 import React from "react";
+import Answer from "./Answer";
 
 function Question(props) {
-  const { question, all_answers, correct_answer } = props.item;
+  const { question, all_answers, correct_answer, is_answered } = props.item;
+
   function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
   }
 
-  const answers = shuffle(all_answers).map((answer) => (
-    <button className="answer-btn" key={answer}>
-      {answer}
-    </button>
+  const displayAnswers = shuffle(all_answers).map((answer) => (
+    <Answer
+      key={answer}
+      answer={answer}
+      correct_answer={correct_answer}
+      disable={is_answered ? true : false}
+      fun={props.log}
+    ></Answer>
   ));
 
   return (
     <div className="question-container">
       <h1>{question}</h1>
-      <div className="answer-container">{answers}</div>
+      <div className="answer-container">{displayAnswers}</div>
     </div>
   );
 }

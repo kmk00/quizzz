@@ -49,10 +49,14 @@ main {
   border-radius: 5px;
 }
 
-.answer-btn:hover {
-  background-color: var(--secondary);
-}
-
 #main-btn {
   width: fit-content;
+}
+
+.correct-answer {
+  background-color: var(--correct);
+}
+
+.wrong-answer {
+  background-color: var(--wrong);
 }
