@@ -19,6 +19,7 @@ function App() {
       .replace(/&amp;/g, "&")
       .replace(/&uuml;/g, "ü")
       .replace(/&ldquo;/g, "”")
+      .replace(/&euml;/g, "ë")
       .replace(/&aacute/g, "á");
 
     return toEncode;
@@ -96,7 +97,7 @@ function App() {
         ))}
       {!isQuiz && (
         <>
-          <h1>Select Topic</h1>
+          <h1>Select Category</h1>
           <form>
             <select
               value={category}
