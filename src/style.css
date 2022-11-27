@@ -48,6 +48,10 @@ h2 {
   font-size: 2rem;
 }
 
+main h1 {
+  text-align: center;
+}
+
 form,
 body,
 .btn-container {
