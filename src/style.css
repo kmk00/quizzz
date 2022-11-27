@@ -102,6 +102,6 @@ button:disabled {
 
 @media screen {
   html {
-    font-size: 50%;
+    font-size: 100%;
   }
 }
