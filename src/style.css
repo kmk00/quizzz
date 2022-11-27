@@ -6,6 +6,7 @@
   --white: #f5f7fb;
   --primary: #293264;
   --secondary: #d6dbf5;
+  --active: #aab5ed;
   --correct: #94d7a2;
   --wrong: #f8bcbc;
 }
@@ -21,6 +22,7 @@ select {
   border: none;
   border-radius: 10px;
   padding: 10px;
+  font-size: 1.7rem;
 }
 
 select {
@@ -31,11 +33,19 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--white);
-  height: auto;
+  min-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 form,
@@ -50,21 +60,6 @@ form {
   padding: 20px;
 }
 
-main {
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-main #main-btn {
-  justify-self: center;
-}
-
-main h1 {
-  text-align: center;
-}
-
 .question-container {
   padding: 10px;
   border-bottom: 1px solid var(--secondary);
@@ -72,16 +67,30 @@ main h1 {
 
 .btn-container {
   padding: 1.4rem;
+  display: flex;
+  gap: 10px;
 }
 
-.answer-container,
-.btn-container {
-  display: flex;
+.answer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 
 .answer-btn {
   border: 1px solid var(--primary);
+}
+
+button:disabled {
+  color: var(--primary);
+}
+
+.answer-btn:hover:enabled {
+  background-color: var(--secondary) !important;
+}
+
+.answer-btn:active:enabled {
+  background-color: var(--active) !important;
 }
 
 #main-btn,
@@ -91,13 +100,8 @@ main h1 {
   width: fit-content;
 }
 
-button:disabled {
-  color: var(--primary);
-}
-
-#main-btn:hover,
-#topic-btn:hover,
-#generate-btn:hover {
-  background-color: var(red);
-  width: fit-content;
+@media screen {
+  html {
+    font-size: 50%;
+  }
 }

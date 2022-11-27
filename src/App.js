@@ -8,7 +8,6 @@ function App() {
   const [questions, setQuestions] = useState(null);
   const [category, setCategory] = useState(10);
   const [generateNew, setGenerateNew] = useState(false);
-
   // --- Helper functions ---
 
   function encode(toEncode) {
@@ -18,10 +17,12 @@ function App() {
       .replace(/&rsquo;/g, "’")
       .replace(/&amp;/g, "&")
       .replace(/&uuml;/g, "ü")
-      .replace(/&ldquo;/g, "”")
+      .replace(/&ldquo;/g, "“")
       .replace(/&euml;/g, "ë")
-      .replace(/&aacute/g, "á");
-
+      .replace(/&aacute/g, "á")
+      .replace(/&hellip/g, "…")
+      .replace(/&rdquog/g, "”")
+      .replace(/&ntilde;/g, "ñ");
     return toEncode;
   }
 
@@ -79,6 +80,9 @@ function App() {
           });
           return newArray;
         })
+        .catch((error) => {
+          console.log(error);
+        })
         .then((data) => setQuestions(data));
     } else {
       setQuestions(null);
@@ -116,14 +120,14 @@ function App() {
         </>
       )}
       <div className="btn-container">
-        <button id="main-btn" onClick={handleQuiz}>
-          {isQuiz ? "Go Back" : "Generate Questions"}
-        </button>
         {isQuiz && (
           <button id="generate-btn" onClick={handleGenerateNew}>
             Generate New
           </button>
         )}
+        <button id="main-btn" onClick={handleQuiz}>
+          {isQuiz ? "Go Back" : "Generate Questions"}
+        </button>
       </div>
     </main>
   );
